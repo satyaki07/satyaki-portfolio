@@ -1,33 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Satyaki Bose - Portfolio Website
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js, React, and Tailwind CSS. Features a mobile-first design with light/dark mode switching and smooth animations.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Mobile-First Design**: Fully responsive layout optimized for all devices
+- **Light/Dark Mode**: Toggle between light and dark themes with smooth transitions
+- **Modern UI**: Clean, minimal design with beautiful animations
+- **Performance Optimized**: Built with Next.js 15 and optimized for speed
+- **TypeScript**: Fully typed for better development experience
+- **Accessibility**: Built with accessibility best practices
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Sections
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Hero**: Introduction with social links and call-to-action
+- **About**: Personal introduction and key strengths
+- **Experience**: Professional work history with technologies used
+- **Skills**: Technical expertise with visual progress indicators
+- **Contact**: Contact form and information
+- **Footer**: Social links and copyright
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Built With
 
-## Learn More
+- **Framework**: [Next.js 15](https://nextjs.org/) with App Router
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Theme**: [next-themes](https://github.com/pacocoursey/next-themes)
 
-To learn more about Next.js, take a look at the following resources:
+## 🏃‍♂️ Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Open your browser** and visit [http://localhost:3000](http://localhost:3000)
+
+## 📱 Responsive Design
+
+The portfolio is designed with a mobile-first approach and includes:
+- Responsive navigation with mobile menu
+- Optimized layouts for mobile, tablet, and desktop
+- Touch-friendly interactions
+- Fast loading times
+
+## 🎨 Customization
+
+To customize the portfolio for your own use:
+
+1. **Update personal information** in the component files:
+   - `src/components/hero.tsx` - Name, title, and bio
+   - `src/components/about.tsx` - About section content
+   - `src/components/experience.tsx` - Work experience data
+   - `src/components/skills.tsx` - Technical skills and proficiency
+   - `src/components/contact.tsx` - Contact information
+
+2. **Update social links** in:
+   - `src/components/hero.tsx`
+   - `src/components/footer.tsx`
+
+3. **Customize styling** by modifying Tailwind classes or updating:
+   - `src/app/globals.css` - Global styles and theme variables
+
+## 🚀 Deployment
+
+The easiest way to deploy this portfolio is to use [Vercel](https://vercel.com/):
+
+1. Push your code to a Git repository
+2. Connect your repository to Vercel
+3. Deploy with zero configuration
+
+Alternatively, you can deploy to other platforms like Netlify, AWS, or any static hosting service.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Feel free to fork this project and customize it for your own portfolio. If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
+
+---
+
+Built with ❤️ by [Satyaki Bose](https://github.com/satyaki)
 
 ## Deploy on Vercel
 
