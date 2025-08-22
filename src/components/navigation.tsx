@@ -31,8 +31,10 @@ export function Navigation() {
         <nav className="flex items-center justify-between p-4 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5 group">
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent hover:from-blue-300 hover:via-teal-300 hover:to-cyan-300 transition-all duration-300">
+              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent hover:from-blue-300 hover:via-teal-300 hover:to-cyan-300 transition-all duration-300 font-mono">
+                <span className="text-gray-500 dark:text-gray-400">&lt;</span>
                 Satyaki
+                <span className="text-gray-500 dark:text-gray-400"> /&gt;</span>
               </span>
             </a>
           </div>
@@ -97,8 +99,10 @@ export function Navigation() {
             <div className="px-6 py-6">
               <div className="flex items-center justify-between">
                 <a href="#" className="-m-1.5 p-1.5">
-                  <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-teal-600 to-cyan-600 dark:from-blue-400 dark:via-teal-400 dark:to-cyan-400 bg-clip-text text-transparent">
+                  <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-teal-600 to-cyan-600 dark:from-blue-400 dark:via-teal-400 dark:to-cyan-400 bg-clip-text text-transparent font-mono">
+                    <span className="text-gray-500 dark:text-gray-400">&lt;</span>
                     Satyaki
+                    <span className="text-gray-500 dark:text-gray-400"> /&gt;</span>
                   </span>
                 </a>
                 <button
