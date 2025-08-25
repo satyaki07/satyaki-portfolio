@@ -46,7 +46,7 @@ export function Hero() {
                     </div>
                     
                     <Image
-                      src="/profile.jpg"
+                      src="/profile.PNG"
                       alt="Satyaki Bose"
                       fill
                       className="object-cover rounded-full"
