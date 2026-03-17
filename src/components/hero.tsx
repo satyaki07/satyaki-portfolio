@@ -34,7 +34,7 @@ export function Hero() {
               className="relative"
             >
               {/* Simplified gradient border */}
-              <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-br from-violet-500 via-purple-500 to-indigo-500 p-1 shadow-2xl">
+              <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full bg-gradient-to-br from-violet-500 via-purple-500 to-indigo-500 p-1 shadow-2xl">
                 <div className="w-full h-full rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center overflow-hidden relative">
                   {/* Clean Profile Image */}
                   <div className="w-full h-full relative">
@@ -49,12 +49,12 @@ export function Hero() {
                       src="/profile.PNG"
                       alt="Satyaki Bose"
                       fill
+                      sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
                       className="object-cover rounded-full"
+                      quality={100}
                       priority
+                      unoptimized
                     />
-                    
-                    {/* Minimal color overlay for theme integration */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-violet-500/10 via-purple-500/5 to-indigo-500/10 mix-blend-overlay"></div>
                   </div>
                 </div>
               </div>
