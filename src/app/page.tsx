@@ -5,6 +5,7 @@ import { Experience } from '@/components/experience';
 import { Skills } from '@/components/skills';
 import { Contact } from '@/components/contact';
 import { Footer } from '@/components/footer';
+import { AskSatyaki } from '@/components/ask-satyaki';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Skills />
       <Contact />
       <Footer />
+      <AskSatyaki />
     </div>
   );
 }
