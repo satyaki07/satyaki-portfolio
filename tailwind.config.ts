@@ -6,6 +6,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        display: ['var(--font-display)', 'Plus Jakarta Sans', 'sans-serif'],
       },
     },
   },

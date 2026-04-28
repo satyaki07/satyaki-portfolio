@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-family-display: var(--font-display), "Plus Jakarta Sans", sans-serif;
+}
+
 html {
   color-scheme: light;
 }

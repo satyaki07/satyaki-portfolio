@@ -1,334 +1,149 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { 
-  // Technology Icons from react-icons/si (Simple Icons)
-  SiReact,
-  SiTypescript,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiVuedotjs,
-  SiJavascript,
-  SiNodedotjs,
-  SiExpress,
-  SiPython,
-  SiPostgresql,
-  SiMongodb,
-  SiGraphql,
-  SiGit,
-  SiDocker,
-  SiAmazon,
-  SiJest,
-  SiFigma
+import {
+  SiReact, SiTypescript, SiNextdotjs, SiTailwindcss, SiVuedotjs, SiJavascript,
+  SiNodedotjs, SiExpress, SiPython, SiPostgresql, SiMongodb, SiGraphql,
+  SiGit, SiDocker, SiAmazon, SiJest, SiFigma,
 } from 'react-icons/si';
 import { VscCode } from 'react-icons/vsc';
-import { 
-  // Fallback icons from Lucide
-  Globe,
-  Server,
-  Terminal,
-  Cpu
-} from 'lucide-react';
+import { Globe, Server, Terminal, Cpu } from 'lucide-react';
 
 const skillCategories = [
   {
-    title: 'Frontend Development',
+    title: 'Frontend',
     description: 'Building modern, responsive user interfaces',
     icon: Globe,
-    gradient: 'from-violet-600 via-purple-600 to-indigo-600',
     skills: [
-      { 
-        name: 'React', 
-        icon: SiReact,
-        color: 'from-cyan-400 to-blue-500',
-        bgColor: 'bg-gradient-to-br from-cyan-50 to-blue-50 dark:bg-gradient-to-br dark:from-cyan-900/10 dark:to-blue-900/10',
-        borderColor: 'border-cyan-200 dark:border-cyan-700/50',
-        textColor: 'text-cyan-600 dark:text-cyan-300'
-      },
-      { 
-        name: 'TypeScript', 
-        icon: SiTypescript,
-        color: 'from-blue-500 to-indigo-600',
-        bgColor: 'bg-gradient-to-br from-blue-50 to-indigo-50 dark:bg-gradient-to-br dark:from-blue-900/10 dark:to-indigo-900/10',
-        borderColor: 'border-blue-200 dark:border-blue-700/50',
-        textColor: 'text-blue-600 dark:text-blue-300'
-      },
-      { 
-        name: 'Next.js', 
-        icon: SiNextdotjs,
-        color: 'from-gray-700 to-black',
-        bgColor: 'bg-gradient-to-br from-gray-50 to-slate-50 dark:bg-gradient-to-br dark:from-gray-800/20 dark:to-slate-800/20',
-        borderColor: 'border-gray-300 dark:border-gray-600/50',
-        textColor: 'text-gray-700 dark:text-gray-300'
-      },
-      { 
-        name: 'Tailwind CSS', 
-        icon: SiTailwindcss,
-        color: 'from-teal-400 to-cyan-500',
-        bgColor: 'bg-gradient-to-br from-teal-50 to-cyan-50 dark:bg-gradient-to-br dark:from-teal-900/10 dark:to-cyan-900/10',
-        borderColor: 'border-teal-200 dark:border-teal-700/50',
-        textColor: 'text-teal-600 dark:text-teal-300'
-      },
-      { 
-        name: 'Vue.js', 
-        icon: SiVuedotjs,
-        color: 'from-emerald-500 to-green-600',
-        bgColor: 'bg-gradient-to-br from-emerald-50 to-green-50 dark:bg-gradient-to-br dark:from-emerald-900/10 dark:to-green-900/10',
-        borderColor: 'border-emerald-200 dark:border-emerald-700/50',
-        textColor: 'text-emerald-600 dark:text-emerald-300'
-      },
-      { 
-        name: 'JavaScript', 
-        icon: SiJavascript,
-        color: 'from-yellow-400 to-orange-500',
-        bgColor: 'bg-gradient-to-br from-yellow-50 to-orange-50 dark:bg-gradient-to-br dark:from-yellow-900/10 dark:to-orange-900/10',
-        borderColor: 'border-yellow-200 dark:border-yellow-700/50',
-        textColor: 'text-gray-900 dark:text-yellow-300'
-      },
+      { name: 'React',       icon: SiReact,       color: 'text-cyan-500' },
+      { name: 'TypeScript',  icon: SiTypescript,  color: 'text-blue-500' },
+      { name: 'Next.js',     icon: SiNextdotjs,   color: 'text-gray-800 dark:text-gray-200' },
+      { name: 'Tailwind',    icon: SiTailwindcss, color: 'text-teal-500' },
+      { name: 'Vue.js',      icon: SiVuedotjs,    color: 'text-emerald-500' },
+      { name: 'JavaScript',  icon: SiJavascript,  color: 'text-yellow-500' },
     ],
   },
   {
-    title: 'Backend Development',
-    description: 'Server-side development and database management',
+    title: 'Backend',
+    description: 'Server-side development and databases',
     icon: Server,
-    gradient: 'from-rose-600 via-pink-600 to-purple-600',
     skills: [
-      { 
-        name: 'Node.js', 
-        icon: SiNodedotjs,
-        color: 'from-green-500 to-emerald-600',
-        bgColor: 'bg-gradient-to-br from-green-50 to-emerald-50 dark:bg-gradient-to-br dark:from-green-900/10 dark:to-emerald-900/10',
-        borderColor: 'border-green-200 dark:border-green-700/50',
-        textColor: 'text-green-600 dark:text-green-300'
-      },
-      { 
-        name: 'Express.js', 
-        icon: SiExpress,
-        color: 'from-gray-600 to-gray-800',
-        bgColor: 'bg-gradient-to-br from-gray-50 to-slate-50 dark:bg-gradient-to-br dark:from-gray-800/20 dark:to-slate-800/20',
-        borderColor: 'border-gray-300 dark:border-gray-600/50',
-        textColor: 'text-gray-900 dark:text-gray-300'
-      },
-      { 
-        name: 'Python', 
-        icon: SiPython,
-        color: 'from-blue-500 to-yellow-400',
-        bgColor: 'bg-gradient-to-br from-blue-50 to-yellow-50 dark:bg-gradient-to-br dark:from-blue-900/10 dark:to-yellow-900/10',
-        borderColor: 'border-blue-200 dark:border-blue-700/50',
-        textColor: 'text-blue-600 dark:text-blue-300'
-      },
-      { 
-        name: 'PostgreSQL', 
-        icon: SiPostgresql,
-        color: 'from-blue-600 to-indigo-700',
-        bgColor: 'bg-gradient-to-br from-blue-50 to-indigo-50 dark:bg-gradient-to-br dark:from-blue-900/10 dark:to-indigo-900/10',
-        borderColor: 'border-blue-200 dark:border-blue-700/50',
-        textColor: 'text-blue-600 dark:text-blue-300'
-      },
-      { 
-        name: 'MongoDB', 
-        icon: SiMongodb,
-        color: 'from-green-600 to-emerald-700',
-        bgColor: 'bg-gradient-to-br from-green-50 to-emerald-50 dark:bg-gradient-to-br dark:from-green-900/10 dark:to-emerald-900/10',
-        borderColor: 'border-green-200 dark:border-green-700/50',
-        textColor: 'text-green-600 dark:text-green-300'
-      },
-      { 
-        name: 'GraphQL', 
-        icon: SiGraphql,
-        color: 'from-pink-500 to-rose-600',
-        bgColor: 'bg-gradient-to-br from-pink-50 to-rose-50 dark:bg-gradient-to-br dark:from-pink-900/10 dark:to-rose-900/10',
-        borderColor: 'border-pink-200 dark:border-pink-700/50',
-        textColor: 'text-pink-600 dark:text-pink-300'
-      },
+      { name: 'Node.js',     icon: SiNodedotjs,   color: 'text-green-500' },
+      { name: 'Express.js',  icon: SiExpress,     color: 'text-gray-700 dark:text-gray-300' },
+      { name: 'Python',      icon: SiPython,      color: 'text-blue-500' },
+      { name: 'PostgreSQL',  icon: SiPostgresql,  color: 'text-blue-600' },
+      { name: 'MongoDB',     icon: SiMongodb,     color: 'text-green-600' },
+      { name: 'GraphQL',     icon: SiGraphql,     color: 'text-pink-500' },
     ],
   },
   {
     title: 'Tools & DevOps',
-    description: 'Development tools and deployment technologies',
+    description: 'Development tools and deployment',
     icon: Terminal,
-    gradient: 'from-emerald-600 via-teal-600 to-cyan-600',
     skills: [
-      { 
-        name: 'Git', 
-        icon: SiGit,
-        color: 'from-orange-500 to-red-500',
-        bgColor: 'bg-gradient-to-br from-orange-50 to-red-50 dark:bg-gradient-to-br dark:from-orange-900/10 dark:to-red-900/10',
-        borderColor: 'border-orange-200 dark:border-orange-700/50',
-        textColor: 'text-orange-600 dark:text-orange-300'
-      },
-      { 
-        name: 'Docker', 
-        icon: SiDocker,
-        color: 'from-blue-500 to-cyan-600',
-        bgColor: 'bg-gradient-to-br from-blue-50 to-cyan-50 dark:bg-gradient-to-br dark:from-blue-900/10 dark:to-cyan-900/10',
-        borderColor: 'border-blue-200 dark:border-blue-700/50',
-        textColor: 'text-blue-600 dark:text-blue-300'
-      },
-      { 
-        name: 'AWS', 
-        icon: SiAmazon,
-        color: 'from-orange-400 to-yellow-500',
-        bgColor: 'bg-gradient-to-br from-orange-50 to-yellow-50 dark:bg-gradient-to-br dark:from-orange-900/10 dark:to-yellow-900/10',
-        borderColor: 'border-orange-200 dark:border-orange-700/50',
-        textColor: 'text-orange-600 dark:text-orange-300'
-      },
-      { 
-        name: 'VS Code', 
-        icon: VscCode,
-        color: 'from-blue-600 to-indigo-700',
-        bgColor: 'bg-gradient-to-br from-blue-50 to-indigo-50 dark:bg-gradient-to-br dark:from-blue-900/10 dark:to-indigo-900/10',
-        borderColor: 'border-blue-200 dark:border-blue-700/50',
-        textColor: 'text-blue-600 dark:text-blue-300'
-      },
-      { 
-        name: 'Jest', 
-        icon: SiJest,
-        color: 'from-red-500 to-pink-600',
-        bgColor: 'bg-gradient-to-br from-red-50 to-pink-50 dark:bg-gradient-to-br dark:from-red-900/10 dark:to-pink-900/10',
-        borderColor: 'border-red-200 dark:border-red-700/50',
-        textColor: 'text-red-600 dark:text-red-300'
-      },
-      { 
-        name: 'Figma', 
-        icon: SiFigma,
-        color: 'from-purple-500 to-indigo-600',
-        bgColor: 'bg-gradient-to-br from-purple-50 to-indigo-50 dark:bg-gradient-to-br dark:from-purple-900/10 dark:to-indigo-900/10',
-        borderColor: 'border-purple-200 dark:border-purple-700/50',
-        textColor: 'text-purple-600 dark:text-purple-300'
-      },
+      { name: 'Git',         icon: SiGit,         color: 'text-orange-500' },
+      { name: 'Docker',      icon: SiDocker,      color: 'text-blue-500' },
+      { name: 'AWS',         icon: SiAmazon,      color: 'text-orange-400' },
+      { name: 'VS Code',     icon: VscCode,       color: 'text-blue-600' },
+      { name: 'Jest',        icon: SiJest,        color: 'text-red-500' },
+      { name: 'Figma',       icon: SiFigma,       color: 'text-purple-500' },
     ],
   },
 ];
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 sm:py-32 bg-white dark:bg-gray-900 relative">
+    <section id="skills" className="relative py-16 sm:py-24 lg:py-32 bg-white dark:bg-gray-900 overflow-hidden">
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mx-auto max-w-2xl lg:text-center"
+          className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="text-base font-semibold leading-7 bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">Skills</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-violet-200 dark:border-violet-800 bg-violet-50 dark:bg-violet-900/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-violet-700 dark:text-violet-300">
+            <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
+            Skills
+          </span>
+          <p className="mt-5 font-display text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
             Technical Expertise
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+          <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-400">
             Technologies and tools I work with to bring ideas to life
           </p>
         </motion.div>
 
-        <div className="mx-auto mt-16 max-w-7xl">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
-            {skillCategories.map((category, categoryIndex) => (
-              <motion.div
-                key={category.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                {/* Category Header with Icon */}
-                <div className="text-center mb-8">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${category.gradient} shadow-lg mb-4`}>
-                    <category.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+        {/* Categories */}
+        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-10 lg:grid-cols-3">
+          {skillCategories.map((category, ci) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: ci * 0.1 }}
+              viewport={{ once: true }}
+            >
+              {/* Category header */}
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-600 shadow-md">
+                  <category.icon className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-display text-base font-semibold text-gray-900 dark:text-white">
                     {category.title}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">
-                    {category.description}
-                  </p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">{category.description}</p>
                 </div>
+              </div>
 
-                {/* Skills Grid - Modern Glass Card Design */}
-                <div className="grid grid-cols-2 gap-4">
-                  {category.skills.map((skill, skillIndex) => {
-                    const IconComponent = skill.icon;
-                    return (
-                      <motion.div
-                        key={skill.name}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ 
-                          duration: 0.4, 
-                          delay: categoryIndex * 0.1 + skillIndex * 0.05,
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 20
-                        }}
-                        viewport={{ once: true }}
-                        whileHover={{ 
-                          scale: 1.05, 
-                          y: -8,
-                          transition: { duration: 0.2, ease: "easeOut" }
-                        }}
-                        whileTap={{ 
-                          scale: 0.95,
-                          transition: { duration: 0.1 }
-                        }}
-                        className="group relative cursor-pointer touch-manipulation"
-                      >
-                        <div className={`${skill.bgColor} ${skill.borderColor} border rounded-2xl p-5 shadow-lg hover:shadow-xl active:shadow-2xl transition-all duration-300 ease-out transform backdrop-blur-sm relative overflow-hidden hover:scale-105 active:scale-95 md:group-hover:scale-105`}>
-                          <div className="flex flex-col items-center text-center relative z-10">
-                            <div className={`p-3 rounded-xl bg-gradient-to-br ${skill.color} shadow-lg mb-4 transition-all duration-300 ease-out relative hover:scale-110 hover:-rotate-3 active:scale-105 active:rotate-1 md:group-hover:scale-110 md:group-hover:-rotate-3`}>
-                              <IconComponent className="w-6 h-6 text-white" />
-                              {/* Icon glow effect */}
-                              <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 hover:opacity-100 active:opacity-100 md:group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </div>
-                            <h4 className={`${skill.textColor} font-semibold text-sm transition-colors duration-300`}>
-                              {skill.name}
-                            </h4>
-                          </div>
-                          
-                          {/* Animated background gradient */}
-                          <div className={`absolute inset-0 rounded-2xl opacity-0 hover:opacity-5 active:opacity-10 md:group-hover:opacity-5 bg-gradient-to-br ${skill.color} transition-all duration-300 ease-out`}></div>
-                          
-                          {/* Subtle border glow */}
-                          <div className={`absolute inset-0 rounded-2xl opacity-0 hover:opacity-40 active:opacity-60 md:group-hover:opacity-40 shadow-lg transition-all duration-300 ease-out`}></div>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              {/* Skill grid */}
+              <div className="grid grid-cols-2 gap-3">
+                {category.skills.map((skill, si) => {
+                  const Icon = skill.icon;
+                  return (
+                    <motion.div
+                      key={skill.name}
+                      initial={{ opacity: 0, scale: 0.85 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.35, delay: ci * 0.08 + si * 0.04 }}
+                      viewport={{ once: true }}
+                      whileHover={{ y: -4, transition: { duration: 0.18 } }}
+                      className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/60 p-4 shadow-sm hover:shadow-md hover:border-violet-200 dark:hover:border-violet-700/60 transition-all cursor-default"
+                    >
+                      <div className="flex flex-col items-center gap-2 text-center">
+                        <Icon className={`h-6 w-6 ${skill.color}`} />
+                        <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                          {skill.name}
+                        </span>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Additional Skills Summary */}
+        {/* Always Learning callout */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-20 text-center"
+          className="mx-auto mt-20 max-w-3xl rounded-2xl border border-violet-200 dark:border-violet-800/60 bg-violet-50 dark:bg-violet-900/10 p-10 text-center shadow-sm"
         >
-          <div className="bg-gradient-to-r from-violet-50 via-purple-50 to-indigo-50 dark:bg-gradient-to-r dark:from-gray-800/80 dark:via-gray-700/60 dark:to-gray-800/80 rounded-3xl p-10 border border-violet-200/50 dark:border-gray-600/50 shadow-2xl backdrop-blur-sm relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/5 via-purple-500/5 to-indigo-500/5 dark:bg-gradient-to-r dark:from-gray-700/30 dark:via-gray-600/20 dark:to-gray-700/30"></div>
-            
-            <div className="relative z-10">
-              <div className="flex items-center justify-center mb-6">
-                <div className="p-4 rounded-2xl bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-600 shadow-2xl relative">
-                  <Cpu className="w-8 h-8 text-white" />
-                  {/* Icon glow */}
-                  <div className="absolute inset-0 rounded-2xl bg-white/20 opacity-50"></div>
-                </div>
-              </div>
-              <h3 className="text-xl font-bold bg-gradient-to-r from-violet-700 to-indigo-700 dark:from-violet-300 dark:to-indigo-300 bg-clip-text text-transparent mb-6">
-                Always Learning
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
-                Passionate about staying current with emerging technologies and best practices. 
-                Currently exploring AI/ML integration, WebAssembly, and advanced cloud architectures.
-              </p>
-            </div>
+          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-600 shadow-md">
+            <Cpu className="h-6 w-6 text-white" />
           </div>
+          <h3 className="font-display text-xl font-semibold text-gray-900 dark:text-white">
+            Always Learning
+          </h3>
+          <p className="mt-3 text-sm leading-7 text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+            Passionate about staying current with emerging technologies and best practices.
+            Currently exploring AI/ML integration, WebAssembly, and advanced cloud architectures.
+          </p>
         </motion.div>
       </div>
     </section>

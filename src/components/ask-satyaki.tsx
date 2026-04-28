@@ -30,6 +30,16 @@ export function AskSatyaki() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // Lock background scroll when chat is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
+
   useEffect(() => {
     if (isOpen) {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -82,7 +92,7 @@ export function AskSatyaki() {
       {/* Floating button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-violet-600 px-4 py-3 text-white shadow-lg hover:bg-violet-700 transition-colors ${isOpen ? 'hidden' : ''}`}
+        className={`fixed bottom-6 right-6 z-50 flex cursor-pointer items-center gap-2 rounded-full bg-violet-600 px-4 py-3 text-white shadow-lg hover:bg-violet-700 transition-colors ${isOpen ? 'hidden' : ''}`}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1.5, type: 'spring', stiffness: 200 }}
@@ -97,12 +107,23 @@ export function AskSatyaki() {
       {/* Chat window */}
       <AnimatePresence>
         {isOpen && (
+          <>
+            {/* Mobile backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-40 bg-black/50 sm:hidden"
+              onClick={() => setIsOpen(false)}
+            />
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed bottom-6 right-6 z-50 flex w-[350px] sm:w-[400px] flex-col rounded-2xl bg-white dark:bg-gray-900 shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
+            className="fixed z-50 flex flex-col bg-white dark:bg-gray-900 shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden
+              inset-x-3 top-1/2 -translate-y-1/2 rounded-2xl
+              sm:translate-y-0 sm:top-auto sm:bottom-6 sm:right-6 sm:left-auto sm:w-[400px] sm:inset-x-auto"
             style={{ height: '520px' }}
           >
             {/* Header */}
@@ -118,7 +139,7 @@ export function AskSatyaki() {
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="rounded-full p-1 text-white/80 hover:bg-white/20 hover:text-white transition-colors"
+                className="cursor-pointer rounded-full p-1 text-white/80 hover:bg-white/20 hover:text-white transition-colors"
                 aria-label="Close chat"
               >
                 <X className="h-4 w-4" />
@@ -177,7 +198,7 @@ export function AskSatyaki() {
                     <button
                       key={q}
                       onClick={() => sendMessage(q)}
-                      className="block w-full text-left rounded-lg border border-violet-200 dark:border-violet-800 bg-violet-50 dark:bg-violet-900/20 px-3 py-2 text-xs text-violet-700 dark:text-violet-300 hover:bg-violet-100 dark:hover:bg-violet-900/40 transition-colors"
+                      className="block w-full cursor-pointer text-left rounded-lg border border-violet-200 dark:border-violet-800 bg-violet-50 dark:bg-violet-900/20 px-3 py-2 text-xs text-violet-700 dark:text-violet-300 hover:bg-violet-100 dark:hover:bg-violet-900/40 transition-colors"
                     >
                       {q}
                     </button>
@@ -205,13 +226,14 @@ export function AskSatyaki() {
               <button
                 type="submit"
                 disabled={!input.trim() || isLoading}
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-violet-600 text-white hover:bg-violet-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                className="flex h-9 w-9 cursor-pointer shrink-0 items-center justify-center rounded-full bg-violet-600 text-white hover:bg-violet-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                 aria-label="Send message"
               >
                 <Send className="h-4 w-4" />
               </button>
             </form>
           </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
