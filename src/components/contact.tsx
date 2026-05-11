@@ -81,7 +81,7 @@ export function Contact() {
     }`;
 
   return (
-    <section id="contact" className="relative py-16 sm:py-24 lg:py-32 bg-gray-50 dark:bg-gray-950 overflow-hidden">
+    <section id="contact" className="relative py-16 sm:py-24 lg:py-32 bg-white dark:bg-gray-900 overflow-hidden">
       {/* Dot-grid */}
       <div
         aria-hidden
