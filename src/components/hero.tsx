@@ -202,8 +202,8 @@ export function Hero() {
             backgroundSize: '28px 28px',
           }}
         />
-        <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-50 dark:from-gray-950 to-transparent" />
-        <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white dark:from-gray-900 to-transparent" />
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-50 to-gray-50/0 dark:from-gray-950 dark:to-gray-950/0" />
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-gray-50 to-gray-50/0 dark:from-gray-950 dark:to-gray-950/0" />
 
         <div className="relative mx-auto max-w-7xl w-full px-5 lg:px-8 py-10 lg:py-36">
 

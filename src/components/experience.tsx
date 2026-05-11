@@ -101,7 +101,7 @@ export function Experience() {
                     {exp.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-full bg-violet-50 dark:bg-violet-900/20 border border-violet-100 dark:border-violet-800/50 px-2.5 py-0.5 text-xs font-medium text-violet-700 dark:text-violet-300"
+                        className="rounded-full bg-violet-100 dark:bg-violet-900/20 border border-violet-200 dark:border-violet-800/50 px-2.5 py-0.5 text-xs font-medium text-violet-800 dark:text-violet-300"
                       >
                         {tech}
                       </span>
